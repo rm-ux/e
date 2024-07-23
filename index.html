@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini on Sol</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: auto; /* Allow height to adjust based on content */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #f8f9fa; /* Light text color */
+            background-color: #1c1c1c; /* Dark background */
+        }
+
+        header {
+            background: #2a2a2a; /* Dark header */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ff4d4d; /* Blood red color */
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9999; /* Lighter red on hover */
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeIn 1s;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #ff4d4d; /* Blood red color */
+            animation: fadeIn 1s;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px auto;
+            display: inline-block;
+        }
+
+        ul li {
+            padding: 10px;
+            background: #333; /* Darker list item background */
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        ul li:hover {
+            transform: translateY(-3px);
+            background: #444; /* Slightly lighter on hover */
+        }
+
+        .chat-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #ff4d4d; /* Blood red button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .chat-button:hover {
+            background: #ff9999; /* Lighter red on hover */
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2a2a2a; /* Dark footer */
+            color: #f8f9fa; /* Light text color */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .price-tracker {
+            margin-top: 40px;
+            padding: 20px;
+            background: #333; /* Dark background for price tracker */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .price {
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #ff4d4d; /* Blood red color for prices */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            header, footer {
+                font-size: 14px;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/60" alt="Gemini on Sol Logo">
+            <h1>Gemini on Sol</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="https://t.me/YOUR_BOT_USERNAME" class="chat-button" target="_blank">Chat with Bot</a>
+        
+        <section id="about">
+            <h2>About Gemini on Sol</h2>
+            <p>Gemini on Sol is your gateway to trading Solana (SOL) securely and efficiently. Join us to explore the exciting world of Solana and its ecosystem!</p>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>🔒 Secure Trading</li>
+                <li>📱 User-Friendly Interface</li>
+                <li>🌐 Access to DeFi and dApps</li>
+                <li>📊 Real-Time Market Data</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please email us at <a href="mailto:info@geminion.sol" style="color: #ff4d4d;">info@geminion.sol</a></p>
+        </section>
+        
+        <section class="price-tracker">
+            <h2>Price Tracker</h2>
+            <div class="price" id="sol-price">Solana (SOL): Loading...</div>
+            <div class="price" id="btc-price">Bitcoin (BTC): Loading...</div>
+            <div class="price" id="eth-price">Ethereum (ETH): Loading...</div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gemini on Sol. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchPrices() {
+            try {
+                const solPriceResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
+                const btcPriceResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+                const ethPriceResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+
+                const solPriceData = await solPriceResponse.json();
+                const btcPriceData = await btcPriceResponse.json();
+                const ethPriceData = await ethPriceResponse.json();
+
+                document.getElementById('sol-price').innerText = `Solana (SOL): $${solPriceData.solana.usd}`;
+                document.getElementById('btc-price').innerText = `Bitcoin (BTC): $${btcPriceData.bitcoin.usd}`;
+                document.getElementById('eth-price').innerText = `Ethereum (ETH): $${ethPriceData.ethereum.usd}`;
+            } catch (error) {
+                console.error('Error fetching prices:', error);
+                document.getElementById('sol-price').innerText = 'Solana (SOL): Error loading price';
+                document.getElementById('btc-price').innerText = 'Bitcoin (BTC): Error loading price';
+                document.getElementById('eth-price').innerText = 'Ethereum (ETH): Error loading price';
+            }
+        }
+
+        fetchPrices();
+        setInterval(fetchPrices, 60000); // Refresh prices every minute
+    </script>
+</body>
+  </html>
